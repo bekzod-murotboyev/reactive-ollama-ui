@@ -1,5 +1,5 @@
 import './App.css'
-import SseViewer from "./sse-viewer.tsx";
+import SseViewer from "./feature/sse-viewer";
 
 function App() {
 
