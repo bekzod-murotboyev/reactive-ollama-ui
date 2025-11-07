@@ -1,11 +1,11 @@
 import './App.css'
-import SseViewer from "./feature/sse-viewer";
+import Replicate from "./feature/replicate";
 
 function App() {
 
-    return (
-        <SseViewer/>
-    )
+    // return (<SseViewer/>)
+
+    return (<Replicate/>)
 }
 
 export default App

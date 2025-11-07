@@ -5,10 +5,15 @@ import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
+    define: {
+        global: "window",       // some libs expect `global`
+        "process.env": {},      // avoid undefined process.env
+    },
     plugins: [react(), tailwindcss()],
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "./src"),
+            buffer: "buffer",
         },
     },
     server: {
@@ -19,5 +24,8 @@ export default defineConfig({
     preview: {
         open: true
     },
-    appType: "spa"
+    appType: "spa",
+    optimizeDeps: {
+        include: ["buffer", "process", "rsocket-core", "rsocket-websocket-client"],
+    },
 })

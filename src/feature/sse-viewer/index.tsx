@@ -30,7 +30,7 @@ const SseViewer = () => {
         setQuestion("");
 
         const es = new EventSource(
-            "http://localhost:3232/api/v1/chats/openai?q=" + encodeURIComponent(key)
+            "http://localhost:3232/api/v1/chats/openai/streaming?q=" + encodeURIComponent(key)
         );
 
         es.onmessage = (ev) => {
